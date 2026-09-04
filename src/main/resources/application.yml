@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  shutdown: graceful
+
+spring:
+  application:
+    name: java-order-book
+  threads:
+    virtual:
+      enabled: true # Java 21 Virtual Threads (Project Loom) for all Tomcat HTTP requests and TaskExecutors
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
